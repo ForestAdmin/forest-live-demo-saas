@@ -1,0 +1,15 @@
+version: '3.4'
+services:
+  app:
+    build:
+      context: .
+    container_name: demo_saas
+    env_file:
+      - .env
+    environment:
+      - DATABASE_URL=${DOCKER_DATABASE_URL}
+    ports:
+      - "${APPLICATION_PORT}:${APPLICATION_PORT}"
+    volumes:
+      - ./:/usr/src/app
+      - /usr/src/app/node_modules
