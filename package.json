@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "nodemon ./index.js",
-    "start:agent": "node ./index.js"
+    "start": "node ./index.js",
+    "start:watch": "nodemon ./index.js"
   },
   "nodemonConfig": {
     "ignore": [
@@ -12,7 +12,6 @@
     ]
   },
   "dependencies": {
-    "dotenv": "^16.0.1",
     "@forestadmin/agent": "^1.0.0",
     "@forestadmin/datasource-sql": "^1.0.0",
     "pg": "^8.8.0"
