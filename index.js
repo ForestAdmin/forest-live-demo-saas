@@ -38,6 +38,23 @@ const agent = createAgent({
     }),
   );
 
+agent.use((dataSourceCustomizer) => {
+  const liveDemoUserEmail = 'erlich.bachman@forestadmin.com';
+  const liveDemoErrorMessage = 'You can only read data on this live demo.';
+
+  function blockCallIfLiveDemoUser(context) {
+    if (liveDemoUserEmail === context.caller.email) {
+      context.throwForbiddenError(liveDemoErrorMessage);
+    }
+  }
+
+  dataSourceCustomizer.collections.map((c) => {
+    c.addHook('Before', "Update", blockCallIfLiveDemoUser);
+    c.addHook('Before', "Delete", blockCallIfLiveDemoUser);
+    c.addHook('Before', "Create", blockCallIfLiveDemoUser);
+  })
+});
+
 agent.customizeCollection('users', collection => {
   collection.addField('Fullname', {
     columnType: 'String',
