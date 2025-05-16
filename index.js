@@ -1,6 +1,8 @@
 require('dotenv').config();
 const { createAgent } = require('@forestadmin/agent');
 const { createSqlDataSource } = require('@forestadmin/datasource-sql');
+const { blockActionForLiveDemoUser } = require("@forestadmin-experimental/live-demo-blocker");
+const liveDemoBlocker = require('@forestadmin-experimental/live-demo-blocker').default;
 
 const dialectOptions = {};
 
@@ -38,22 +40,7 @@ const agent = createAgent({
     }),
   );
 
-agent.use((dataSourceCustomizer) => {
-  const liveDemoUserEmail = 'erlich.bachman@forestadmin.com';
-  const liveDemoErrorMessage = 'You can only read data on this live demo.';
-
-  function blockCallIfLiveDemoUser(context) {
-    if (liveDemoUserEmail === context.caller.email) {
-      context.throwForbiddenError(liveDemoErrorMessage);
-    }
-  }
-
-  dataSourceCustomizer.collections.map((c) => {
-    c.addHook('Before', "Update", blockCallIfLiveDemoUser);
-    c.addHook('Before', "Delete", blockCallIfLiveDemoUser);
-    c.addHook('Before', "Create", blockCallIfLiveDemoUser);
-  })
-});
+agent.use(liveDemoBlocker);
 
 agent.customizeCollection('users', collection => {
   collection.addField('Fullname', {
@@ -69,6 +56,9 @@ agent.customizeCollection('users', collection => {
   .addAction('Disable user', {
     scope: 'Single',
     execute: async (context, resultBuilder) => {
+      const result = blockActionForLiveDemoUser(context, resultBuilder);
+      if (result) return result;
+
       return resultBuilder.success('User disabled!');
     },
   });
@@ -160,6 +150,9 @@ agent.customizeCollection('companies', collection => {
       },
     ],
     execute: async (context, resultBuilder) => {
+      const result = blockActionForLiveDemoUser(context, resultBuilder);
+      if (result) return result;
+
       return resultBuilder.success('Plan updated!');
     },
   })
@@ -176,6 +169,9 @@ agent.customizeCollection('companies', collection => {
       },
     ],
     execute: async (context, resultBuilder) => {
+      const result = blockActionForLiveDemoUser(context, resultBuilder);
+      if (result) return result;
+
       return resultBuilder.success('Subscription cancelled!');
     },
   })

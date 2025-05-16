@@ -18,7 +18,7 @@
           "reference": "companies.id",
           "relationship": "BelongsTo",
           "type": "Number",
-          "validations": [{"type": "is present", "message": "Failed validation rule: 'Present'"}]
+          "validations": [{"type": "is present", "message": "Field is required"}]
         },
         {
           "defaultValue": null,
@@ -35,7 +35,7 @@
           "reference": "users.id",
           "relationship": "BelongsTo",
           "type": "Number",
-          "validations": [{"type": "is present", "message": "Failed validation rule: 'Present'"}]
+          "validations": [{"type": "is present", "message": "Field is required"}]
         },
         {
           "defaultValue": null,
@@ -52,11 +52,11 @@
           "reference": "features.id",
           "relationship": "BelongsTo",
           "type": "Number",
-          "validations": [{"type": "is present", "message": "Failed validation rule: 'Present'"}]
+          "validations": [{"type": "is present", "message": "Field is required"}]
         },
         {
           "defaultValue": null,
-          "enums": null,
+          "enums": [],
           "field": "id",
           "integration": null,
           "inverseOf": null,
@@ -72,19 +72,19 @@
         },
         {
           "defaultValue": null,
-          "enums": null,
+          "enums": [],
           "field": "logged_at",
           "integration": null,
           "inverseOf": null,
           "isFilterable": true,
           "isPrimaryKey": false,
           "isReadOnly": false,
-          "isRequired": false,
+          "isRequired": true,
           "isSortable": true,
           "isVirtual": false,
           "reference": null,
           "type": "Date",
-          "validations": []
+          "validations": [{"type": "is present", "message": "Field is required"}]
         }
       ],
       "icon": null,
@@ -110,9 +110,10 @@
           "download": false,
           "fields": [
             {
+              "field": "Are you sure?",
+              "label": "Are you sure?",
               "description": "Think twice before cancelling this subscription.",
               "isRequired": true,
-              "field": "Are you sure?",
               "type": "Enum",
               "enums": ["⛔️ No", "✅ Yes"],
               "defaultValue": "⛔️ No"
@@ -132,6 +133,7 @@
           "fields": [
             {
               "field": "Loading...",
+              "label": "Loading...",
               "type": "String",
               "isReadOnly": true,
               "defaultValue": "Form is loading",
@@ -140,7 +142,7 @@
               "hook": null,
               "isRequired": false,
               "reference": null,
-              "widget": null
+              "widgetEdit": null
             }
           ],
           "hooks": {"load": true, "change": ["changeHook"]}
@@ -149,7 +151,7 @@
       "fields": [
         {
           "defaultValue": null,
-          "enums": null,
+          "enums": [],
           "field": "MRR",
           "integration": null,
           "inverseOf": null,
@@ -182,7 +184,7 @@
         },
         {
           "defaultValue": null,
-          "enums": null,
+          "enums": [],
           "field": "created_at",
           "integration": null,
           "inverseOf": null,
@@ -215,7 +217,7 @@
         },
         {
           "defaultValue": null,
-          "enums": null,
+          "enums": [],
           "field": "id",
           "integration": null,
           "inverseOf": null,
@@ -231,7 +233,7 @@
         },
         {
           "defaultValue": null,
-          "enums": null,
+          "enums": [],
           "field": "industry",
           "integration": null,
           "inverseOf": null,
@@ -264,7 +266,7 @@
         },
         {
           "defaultValue": null,
-          "enums": null,
+          "enums": [],
           "field": "name",
           "integration": null,
           "inverseOf": null,
@@ -276,11 +278,11 @@
           "isVirtual": false,
           "reference": null,
           "type": "String",
-          "validations": [{"type": "is present", "message": "Failed validation rule: 'Present'"}]
+          "validations": [{"type": "is present", "message": "Field is required"}]
         },
         {
           "defaultValue": null,
-          "enums": null,
+          "enums": [],
           "field": "nbUsers",
           "integration": null,
           "inverseOf": null,
@@ -296,7 +298,7 @@
         },
         {
           "defaultValue": null,
-          "enums": null,
+          "enums": [],
           "field": "planPrice",
           "integration": null,
           "inverseOf": null,
@@ -312,7 +314,7 @@
         },
         {
           "defaultValue": null,
-          "enums": null,
+          "enums": [],
           "field": "size",
           "integration": null,
           "inverseOf": null,
@@ -379,7 +381,7 @@
         },
         {
           "defaultValue": null,
-          "enums": null,
+          "enums": [],
           "field": "updated_at",
           "integration": null,
           "inverseOf": null,
@@ -460,7 +462,7 @@
         },
         {
           "defaultValue": null,
-          "enums": null,
+          "enums": [],
           "field": "created_at",
           "integration": null,
           "inverseOf": null,
@@ -476,7 +478,7 @@
         },
         {
           "defaultValue": null,
-          "enums": null,
+          "enums": [],
           "field": "description",
           "integration": null,
           "inverseOf": null,
@@ -492,7 +494,7 @@
         },
         {
           "defaultValue": null,
-          "enums": null,
+          "enums": [],
           "field": "id",
           "integration": null,
           "inverseOf": null,
@@ -508,7 +510,7 @@
         },
         {
           "defaultValue": null,
-          "enums": null,
+          "enums": [],
           "field": "name",
           "integration": null,
           "inverseOf": null,
@@ -520,11 +522,11 @@
           "isVirtual": false,
           "reference": null,
           "type": "String",
-          "validations": [{"type": "is present", "message": "Failed validation rule: 'Present'"}]
+          "validations": [{"type": "is present", "message": "Field is required"}]
         },
         {
-          "defaultValue": null,
-          "enums": null,
+          "defaultValue": false,
+          "enums": [],
           "field": "plan_enterprise",
           "integration": null,
           "inverseOf": null,
@@ -536,11 +538,11 @@
           "isVirtual": false,
           "reference": null,
           "type": "Boolean",
-          "validations": [{"type": "is present", "message": "Failed validation rule: 'Present'"}]
+          "validations": [{"type": "is present", "message": "Field is required"}]
         },
         {
-          "defaultValue": null,
-          "enums": null,
+          "defaultValue": false,
+          "enums": [],
           "field": "plan_free",
           "integration": null,
           "inverseOf": null,
@@ -552,11 +554,11 @@
           "isVirtual": false,
           "reference": null,
           "type": "Boolean",
-          "validations": [{"type": "is present", "message": "Failed validation rule: 'Present'"}]
+          "validations": [{"type": "is present", "message": "Field is required"}]
         },
         {
-          "defaultValue": null,
-          "enums": null,
+          "defaultValue": false,
+          "enums": [],
           "field": "plan_pro",
           "integration": null,
           "inverseOf": null,
@@ -568,11 +570,11 @@
           "isVirtual": false,
           "reference": null,
           "type": "Boolean",
-          "validations": [{"type": "is present", "message": "Failed validation rule: 'Present'"}]
+          "validations": [{"type": "is present", "message": "Field is required"}]
         },
         {
-          "defaultValue": null,
-          "enums": null,
+          "defaultValue": false,
+          "enums": [],
           "field": "plan_team",
           "integration": null,
           "inverseOf": null,
@@ -584,11 +586,11 @@
           "isVirtual": false,
           "reference": null,
           "type": "Boolean",
-          "validations": [{"type": "is present", "message": "Failed validation rule: 'Present'"}]
+          "validations": [{"type": "is present", "message": "Field is required"}]
         },
         {
           "defaultValue": null,
-          "enums": null,
+          "enums": [],
           "field": "updated_at",
           "integration": null,
           "inverseOf": null,
@@ -618,7 +620,7 @@
       "fields": [
         {
           "defaultValue": null,
-          "enums": null,
+          "enums": [],
           "field": "amount",
           "integration": null,
           "inverseOf": null,
@@ -630,7 +632,7 @@
           "isVirtual": false,
           "reference": null,
           "type": "Number",
-          "validations": [{"type": "is present", "message": "Failed validation rule: 'Present'"}]
+          "validations": [{"type": "is present", "message": "Field is required"}]
         },
         {
           "defaultValue": null,
@@ -647,11 +649,11 @@
           "reference": "companies.id",
           "relationship": "BelongsTo",
           "type": "Number",
-          "validations": [{"type": "is present", "message": "Failed validation rule: 'Present'"}]
+          "validations": [{"type": "is present", "message": "Field is required"}]
         },
         {
           "defaultValue": null,
-          "enums": null,
+          "enums": [],
           "field": "created_at",
           "integration": null,
           "inverseOf": null,
@@ -680,11 +682,11 @@
           "reference": "users.id",
           "relationship": "BelongsTo",
           "type": "Number",
-          "validations": [{"type": "is present", "message": "Failed validation rule: 'Present'"}]
+          "validations": [{"type": "is present", "message": "Field is required"}]
         },
         {
           "defaultValue": null,
-          "enums": null,
+          "enums": [],
           "field": "id",
           "integration": null,
           "inverseOf": null,
@@ -713,11 +715,11 @@
           "reference": "plans.id",
           "relationship": "BelongsTo",
           "type": "Number",
-          "validations": [{"type": "is present", "message": "Failed validation rule: 'Present'"}]
+          "validations": [{"type": "is present", "message": "Field is required"}]
         },
         {
           "defaultValue": null,
-          "enums": ["pending", "paid", "void"],
+          "enums": ["paid", "pending", "void"],
           "field": "status",
           "integration": null,
           "inverseOf": null,
@@ -729,7 +731,7 @@
           "isVirtual": false,
           "reference": null,
           "type": "Enum",
-          "validations": [{"type": "is present", "message": "Failed validation rule: 'Present'"}]
+          "validations": [{"type": "is present", "message": "Field is required"}]
         },
         {
           "defaultValue": null,
@@ -746,7 +748,7 @@
           "reference": "subscriptions.id",
           "relationship": "BelongsTo",
           "type": "Number",
-          "validations": [{"type": "is present", "message": "Failed validation rule: 'Present'"}]
+          "validations": [{"type": "is present", "message": "Field is required"}]
         },
         {
           "defaultValue": null,
@@ -767,7 +769,7 @@
         },
         {
           "defaultValue": null,
-          "enums": null,
+          "enums": [],
           "field": "updated_at",
           "integration": null,
           "inverseOf": null,
@@ -797,7 +799,7 @@
       "fields": [
         {
           "defaultValue": null,
-          "enums": null,
+          "enums": [],
           "field": "created_at",
           "integration": null,
           "inverseOf": null,
@@ -813,7 +815,7 @@
         },
         {
           "defaultValue": null,
-          "enums": null,
+          "enums": [],
           "field": "description",
           "integration": null,
           "inverseOf": null,
@@ -829,7 +831,7 @@
         },
         {
           "defaultValue": null,
-          "enums": null,
+          "enums": [],
           "field": "id",
           "integration": null,
           "inverseOf": null,
@@ -845,7 +847,7 @@
         },
         {
           "defaultValue": null,
-          "enums": ["monthly", "yearly", "custom"],
+          "enums": ["custom", "monthly", "yearly"],
           "field": "interval",
           "integration": null,
           "inverseOf": null,
@@ -857,7 +859,7 @@
           "isVirtual": false,
           "reference": null,
           "type": "Enum",
-          "validations": [{"type": "is present", "message": "Failed validation rule: 'Present'"}]
+          "validations": [{"type": "is present", "message": "Field is required"}]
         },
         {
           "defaultValue": null,
@@ -878,7 +880,7 @@
         },
         {
           "defaultValue": null,
-          "enums": null,
+          "enums": [],
           "field": "name",
           "integration": null,
           "inverseOf": null,
@@ -890,11 +892,11 @@
           "isVirtual": false,
           "reference": null,
           "type": "String",
-          "validations": [{"type": "is present", "message": "Failed validation rule: 'Present'"}]
+          "validations": [{"type": "is present", "message": "Field is required"}]
         },
         {
           "defaultValue": null,
-          "enums": null,
+          "enums": [],
           "field": "price",
           "integration": null,
           "inverseOf": null,
@@ -906,7 +908,7 @@
           "isVirtual": false,
           "reference": null,
           "type": "Number",
-          "validations": [{"type": "is present", "message": "Failed validation rule: 'Present'"}]
+          "validations": [{"type": "is present", "message": "Field is required"}]
         },
         {
           "defaultValue": null,
@@ -927,7 +929,7 @@
         },
         {
           "defaultValue": null,
-          "enums": null,
+          "enums": [],
           "field": "updated_at",
           "integration": null,
           "inverseOf": null,
@@ -969,7 +971,7 @@
           "isVirtual": false,
           "reference": null,
           "type": "Enum",
-          "validations": [{"type": "is present", "message": "Failed validation rule: 'Present'"}]
+          "validations": [{"type": "is present", "message": "Field is required"}]
         },
         {
           "defaultValue": null,
@@ -986,11 +988,11 @@
           "reference": "companies.id",
           "relationship": "BelongsTo",
           "type": "Number",
-          "validations": [{"type": "is present", "message": "Failed validation rule: 'Present'"}]
+          "validations": [{"type": "is present", "message": "Field is required"}]
         },
         {
           "defaultValue": null,
-          "enums": null,
+          "enums": [],
           "field": "created_at",
           "integration": null,
           "inverseOf": null,
@@ -1019,11 +1021,11 @@
           "reference": "users.id",
           "relationship": "BelongsTo",
           "type": "Number",
-          "validations": [{"type": "is present", "message": "Failed validation rule: 'Present'"}]
+          "validations": [{"type": "is present", "message": "Field is required"}]
         },
         {
           "defaultValue": null,
-          "enums": null,
+          "enums": [],
           "field": "discount",
           "integration": null,
           "inverseOf": null,
@@ -1039,7 +1041,7 @@
         },
         {
           "defaultValue": null,
-          "enums": null,
+          "enums": [],
           "field": "ended_at",
           "integration": null,
           "inverseOf": null,
@@ -1055,7 +1057,7 @@
         },
         {
           "defaultValue": null,
-          "enums": null,
+          "enums": [],
           "field": "id",
           "integration": null,
           "inverseOf": null,
@@ -1101,11 +1103,11 @@
           "reference": "plans.id",
           "relationship": "BelongsTo",
           "type": "Number",
-          "validations": [{"type": "is present", "message": "Failed validation rule: 'Present'"}]
+          "validations": [{"type": "is present", "message": "Field is required"}]
         },
         {
           "defaultValue": null,
-          "enums": null,
+          "enums": [],
           "field": "renewal_date",
           "integration": null,
           "inverseOf": null,
@@ -1121,23 +1123,23 @@
         },
         {
           "defaultValue": null,
-          "enums": null,
+          "enums": [],
           "field": "started_at",
           "integration": null,
           "inverseOf": null,
           "isFilterable": true,
           "isPrimaryKey": false,
           "isReadOnly": false,
-          "isRequired": false,
+          "isRequired": true,
           "isSortable": true,
           "isVirtual": false,
           "reference": null,
           "type": "Date",
-          "validations": []
+          "validations": [{"type": "is present", "message": "Field is required"}]
         },
         {
           "defaultValue": null,
-          "enums": ["active", "paused", "canceled"],
+          "enums": ["active", "canceled", "paused"],
           "field": "status",
           "integration": null,
           "inverseOf": null,
@@ -1149,11 +1151,11 @@
           "isVirtual": false,
           "reference": null,
           "type": "Enum",
-          "validations": [{"type": "is present", "message": "Failed validation rule: 'Present'"}]
+          "validations": [{"type": "is present", "message": "Field is required"}]
         },
         {
           "defaultValue": null,
-          "enums": null,
+          "enums": [],
           "field": "updated_at",
           "integration": null,
           "inverseOf": null,
@@ -1183,7 +1185,7 @@
       "fields": [
         {
           "defaultValue": null,
-          "enums": null,
+          "enums": [],
           "field": "closed_at",
           "integration": null,
           "inverseOf": null,
@@ -1212,11 +1214,11 @@
           "reference": "companies.id",
           "relationship": "BelongsTo",
           "type": "Number",
-          "validations": [{"type": "is present", "message": "Failed validation rule: 'Present'"}]
+          "validations": [{"type": "is present", "message": "Field is required"}]
         },
         {
           "defaultValue": null,
-          "enums": null,
+          "enums": [],
           "field": "created_at",
           "integration": null,
           "inverseOf": null,
@@ -1245,11 +1247,11 @@
           "reference": "users.id",
           "relationship": "BelongsTo",
           "type": "Number",
-          "validations": [{"type": "is present", "message": "Failed validation rule: 'Present'"}]
+          "validations": [{"type": "is present", "message": "Field is required"}]
         },
         {
           "defaultValue": null,
-          "enums": null,
+          "enums": [],
           "field": "id",
           "integration": null,
           "inverseOf": null,
@@ -1265,7 +1267,7 @@
         },
         {
           "defaultValue": null,
-          "enums": null,
+          "enums": [],
           "field": "issue_topic",
           "integration": null,
           "inverseOf": null,
@@ -1277,11 +1279,11 @@
           "isVirtual": false,
           "reference": null,
           "type": "String",
-          "validations": [{"type": "is present", "message": "Failed validation rule: 'Present'"}]
+          "validations": [{"type": "is present", "message": "Field is required"}]
         },
         {
           "defaultValue": null,
-          "enums": ["new", "assigned", "closed"],
+          "enums": ["assigned", "closed", "new"],
           "field": "status",
           "integration": null,
           "inverseOf": null,
@@ -1293,11 +1295,11 @@
           "isVirtual": false,
           "reference": null,
           "type": "Enum",
-          "validations": [{"type": "is present", "message": "Failed validation rule: 'Present'"}]
+          "validations": [{"type": "is present", "message": "Field is required"}]
         },
         {
           "defaultValue": null,
-          "enums": null,
+          "enums": [],
           "field": "updated_at",
           "integration": null,
           "inverseOf": null,
@@ -1327,7 +1329,7 @@
       "fields": [
         {
           "defaultValue": null,
-          "enums": null,
+          "enums": [],
           "field": "amount",
           "integration": null,
           "inverseOf": null,
@@ -1339,7 +1341,7 @@
           "isVirtual": false,
           "reference": null,
           "type": "Number",
-          "validations": [{"type": "is present", "message": "Failed validation rule: 'Present'"}]
+          "validations": [{"type": "is present", "message": "Field is required"}]
         },
         {
           "defaultValue": null,
@@ -1356,7 +1358,7 @@
           "reference": "companies.id",
           "relationship": "BelongsTo",
           "type": "Number",
-          "validations": [{"type": "is present", "message": "Failed validation rule: 'Present'"}]
+          "validations": [{"type": "is present", "message": "Field is required"}]
         },
         {
           "defaultValue": null,
@@ -1373,27 +1375,27 @@
           "reference": "users.id",
           "relationship": "BelongsTo",
           "type": "Number",
-          "validations": [{"type": "is present", "message": "Failed validation rule: 'Present'"}]
+          "validations": [{"type": "is present", "message": "Field is required"}]
         },
         {
           "defaultValue": null,
-          "enums": null,
+          "enums": [],
           "field": "executed_at",
           "integration": null,
           "inverseOf": null,
           "isFilterable": true,
           "isPrimaryKey": false,
           "isReadOnly": false,
-          "isRequired": false,
+          "isRequired": true,
           "isSortable": true,
           "isVirtual": false,
           "reference": null,
           "type": "Date",
-          "validations": []
+          "validations": [{"type": "is present", "message": "Field is required"}]
         },
         {
           "defaultValue": null,
-          "enums": null,
+          "enums": [],
           "field": "id",
           "integration": null,
           "inverseOf": null,
@@ -1422,11 +1424,11 @@
           "reference": "invoices.id",
           "relationship": "BelongsTo",
           "type": "Number",
-          "validations": [{"type": "is present", "message": "Failed validation rule: 'Present'"}]
+          "validations": [{"type": "is present", "message": "Field is required"}]
         },
         {
           "defaultValue": null,
-          "enums": ["credit_card", "paypal", "stripe", "bank_transfer"],
+          "enums": ["bank_transfer", "credit_card", "paypal", "stripe"],
           "field": "payment_method",
           "integration": null,
           "inverseOf": null,
@@ -1438,7 +1440,7 @@
           "isVirtual": false,
           "reference": null,
           "type": "Enum",
-          "validations": [{"type": "is present", "message": "Failed validation rule: 'Present'"}]
+          "validations": [{"type": "is present", "message": "Field is required"}]
         }
       ],
       "icon": null,
@@ -1469,7 +1471,7 @@
       "fields": [
         {
           "defaultValue": null,
-          "enums": null,
+          "enums": [],
           "field": "Fullname",
           "integration": null,
           "inverseOf": null,
@@ -1502,7 +1504,7 @@
         },
         {
           "defaultValue": null,
-          "enums": null,
+          "enums": [],
           "field": "avatar",
           "integration": null,
           "inverseOf": null,
@@ -1552,7 +1554,7 @@
         },
         {
           "defaultValue": null,
-          "enums": null,
+          "enums": [],
           "field": "completed_at",
           "integration": null,
           "inverseOf": null,
@@ -1568,7 +1570,7 @@
         },
         {
           "defaultValue": null,
-          "enums": null,
+          "enums": [],
           "field": "created_at",
           "integration": null,
           "inverseOf": null,
@@ -1584,7 +1586,7 @@
         },
         {
           "defaultValue": null,
-          "enums": null,
+          "enums": [],
           "field": "email",
           "integration": null,
           "inverseOf": null,
@@ -1596,11 +1598,11 @@
           "isVirtual": false,
           "reference": null,
           "type": "String",
-          "validations": [{"type": "is present", "message": "Failed validation rule: 'Present'"}]
+          "validations": [{"type": "is present", "message": "Field is required"}]
         },
         {
           "defaultValue": null,
-          "enums": null,
+          "enums": [],
           "field": "firstname",
           "integration": null,
           "inverseOf": null,
@@ -1612,11 +1614,11 @@
           "isVirtual": false,
           "reference": null,
           "type": "String",
-          "validations": [{"type": "is present", "message": "Failed validation rule: 'Present'"}]
+          "validations": [{"type": "is present", "message": "Field is required"}]
         },
         {
           "defaultValue": null,
-          "enums": null,
+          "enums": [],
           "field": "id",
           "integration": null,
           "inverseOf": null,
@@ -1649,7 +1651,7 @@
         },
         {
           "defaultValue": null,
-          "enums": null,
+          "enums": [],
           "field": "lastname",
           "integration": null,
           "inverseOf": null,
@@ -1661,11 +1663,11 @@
           "isVirtual": false,
           "reference": null,
           "type": "String",
-          "validations": [{"type": "is present", "message": "Failed validation rule: 'Present'"}]
+          "validations": [{"type": "is present", "message": "Field is required"}]
         },
         {
           "defaultValue": null,
-          "enums": null,
+          "enums": [],
           "field": "password",
           "integration": null,
           "inverseOf": null,
@@ -1677,11 +1679,11 @@
           "isVirtual": false,
           "reference": null,
           "type": "String",
-          "validations": [{"type": "is present", "message": "Failed validation rule: 'Present'"}]
+          "validations": [{"type": "is present", "message": "Field is required"}]
         },
         {
           "defaultValue": null,
-          "enums": ["user", "editor", "admin"],
+          "enums": ["admin", "editor", "user"],
           "field": "role",
           "integration": null,
           "inverseOf": null,
@@ -1693,11 +1695,11 @@
           "isVirtual": false,
           "reference": null,
           "type": "Enum",
-          "validations": [{"type": "is present", "message": "Failed validation rule: 'Present'"}]
+          "validations": [{"type": "is present", "message": "Field is required"}]
         },
         {
           "defaultValue": null,
-          "enums": ["enabled", "disabled", "deleted"],
+          "enums": ["deleted", "disabled", "enabled"],
           "field": "status",
           "integration": null,
           "inverseOf": null,
@@ -1709,7 +1711,7 @@
           "isVirtual": false,
           "reference": null,
           "type": "Enum",
-          "validations": [{"type": "is present", "message": "Failed validation rule: 'Present'"}]
+          "validations": [{"type": "is present", "message": "Field is required"}]
         },
         {
           "defaultValue": null,
@@ -1764,7 +1766,7 @@
         },
         {
           "defaultValue": null,
-          "enums": null,
+          "enums": [],
           "field": "updated_at",
           "integration": null,
           "inverseOf": null,
@@ -1790,9 +1792,10 @@
       "segments": []
     }
   ],
-  "metadata": {
+  "meta": {
     "liana": "forest-nodejs-agent",
-    "liana_version": "1.8.8",
-    "stack": {"engine": "nodejs", "engine_version": "19.6.0"}
+    "liana_version": "1.64.0",
+    "liana_features": null,
+    "stack": {"engine": "nodejs", "engine_version": "22.11.0"}
   }
 }
